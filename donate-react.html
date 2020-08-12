@@ -153,14 +153,13 @@
       }
 
       .form-active {
-        border: 1px solid rgba(238, 168, 19, 1);
-        background-color: #eea813;
-        color: #fff;
+        box-shadow: 0 0 5px rgba(238, 168, 19, 1) !important;
+        border: 1px solid rgba(238, 168, 19, 1) !important;
       }
 
       .invalid {
         box-shadow: 0 0 5px rgba(200, 0, 0, 0.85);
-        border: 1px solid rgba(200, 0, 0, 0.85);
+        /* border: 1px solid rgba(200, 0, 0, 0.85); */
       }
 
       .error {
@@ -288,10 +287,16 @@
           <i class="fa fa-caret-down" aria-hidden="true"></i>
         </div>
         <div class="form-wrapper my-10">
-          <label for="frequency" class="fs-18 d-block mb-10"
-            >Notes (Optional)</label
-          >
-          <textarea name="" id="" cols="30" rows="10"></textarea>
+          <label for="frequency" class="fs-18 d-block mb-10">Notes</label>
+          <textarea
+            class="invalid"
+            name=""
+            id=""
+            cols="30"
+            rows="10"
+            required
+          ></textarea>
+          <span class="error error-show">Required Field</span>
         </div>
         <div class="form-wrapper my-10">
           <label for="frequency" class="fs-18 d-inline-block mb-10"
