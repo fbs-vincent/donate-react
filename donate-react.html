@@ -163,6 +163,15 @@
         border: 1px solid rgba(200, 0, 0, 0.85);
       }
 
+      .error {
+        color: rgba(200, 0, 0, 0.85);
+        visibility: hidden;
+      }
+
+      .error-show {
+        visibility: visible;
+      }
+
       @media screen and (max-width: 514px) {
         #donate-react {
           width: 320px;
@@ -245,9 +254,10 @@
         </h2>
         <hr />
         <div class="form-wrapper my-10">
-          <label for="designation" class="fs-18 d-block mb-10"
+          <label for="designation" class="fs-18 d-inline-block mb-10"
             >Designation
           </label>
+
           <select class="invalid" name="designation" id="designation" required>
             <option value="">-</option>
             <option
@@ -274,6 +284,7 @@
               >Adopt a Church (pls provide note)</option
             >
           </select>
+          <span class="error error-show">Required Field</span>
           <i class="fa fa-caret-down" aria-hidden="true"></i>
         </div>
         <div class="form-wrapper my-10">
@@ -283,16 +294,20 @@
           <textarea name="" id="" cols="30" rows="10"></textarea>
         </div>
         <div class="form-wrapper my-10">
-          <label for="frequency" class="fs-18 d-block mb-10">Frequency</label>
+          <label for="frequency" class="fs-18 d-inline-block mb-10"
+            >Frequency</label
+          >
+
           <select class="invalid" name="frequency" id="frequency" required>
             <option value="">-</option>
             <option value="Monthly">Monthly</option>
             <option value="One-Time">One-Time</option>
           </select>
+          <span class="error error-show">Required Field</span>
           <i class="fa fa-caret-down" aria-hidden="true"></i>
         </div>
         <div class="form-wrapper my-10">
-          <label for="specific-amount" class="fs-18 d-block mb-10"
+          <label for="specific-amount" class="fs-18 d-inline-block mb-10"
             >Specific Amount</label
           >
           <i class="fa fa-usd" aria-hidden="true"></i
@@ -304,16 +319,17 @@
             placeholder="0.00"
             required
           />
+          <span class="error error-show">Required Field</span>
         </div>
         <div class="form-wrapper my-10">
-          <label for="payment-method" class="fs-18 d-block mb-10"
+          <label for="payment-method" class="fs-18 d-inline-block mb-10"
             >Payment Method</label
           >
+
           <div
             class="d-flex align-items-center payment-method mb-10 toggleCard invalid"
           >
             <input
-              class="mb-10"
               type="radio"
               name="payment-method"
               id="card"
@@ -329,10 +345,9 @@
             /></span>
           </div>
           <div
-            class="d-flex align-items-center payment-method mb-40 togglePaypal invalid"
+            class="d-flex align-items-center payment-method togglePaypal invalid"
           >
             <input
-              class="mb-30"
               type="radio"
               name="payment-method"
               id="paypal"
@@ -347,9 +362,10 @@
                 alt="PayPal Logo"
             /></span>
           </div>
+          <span class="error error-show">Required Field</span>
         </div>
         <div class="form-wrapper my-10">
-          <input class="d-block" type="submit" value="DONATE" />
+          <input class="d-block mt-30" type="submit" value="DONATE" />
         </div>
       </form>
     </section>
