@@ -96,6 +96,73 @@
         margin-left: 10px;
       }
 
+      #donate-react input[type='radio'] {
+        min-height: 41px;
+        cursor: pointer;
+        margin: unset;
+        margin-right: 10px;
+        pointer-events: none;
+      }
+
+      #donate-react .payment-method {
+        border: 1px solid #e0e0e0;
+        padding: 0 25px;
+        cursor: pointer;
+        transition: 0.2s all ease-in-out;
+      }
+
+      #donate-react .payment-method:focus,
+      #donate-react .payment-method:active,
+      #donate-react .payment-method:hover {
+        box-shadow: 0 0 5px rgba(238, 168, 19, 1);
+        border: 1px solid rgba(238, 168, 19, 1);
+      }
+
+      #donate-react .payment-method span {
+        pointer-events: none;
+      }
+
+      #donate-react .payment-method label {
+        cursor: pointer;
+        pointer-events: none;
+      }
+
+      #donate-react textarea:hover {
+        box-shadow: 0 0 5px rgba(238, 168, 19, 1);
+        border: 1px solid rgba(238, 168, 19, 1);
+      }
+
+      #donate-react input[type='text']:hover {
+        box-shadow: 0 0 5px rgba(238, 168, 19, 1);
+        border: 1px solid rgba(238, 168, 19, 1);
+      }
+
+      #donate-react input[type='submit'] {
+        margin-left: unset;
+        width: 100%;
+        background-color: #eea813;
+        border: 1px solid #eea813;
+        transition: 0.2s all ease-in-out;
+      }
+
+      #donate-react input[type='submit']:hover,
+      #donate-react input[type='submit']:focus,
+      #donate-react input[type='submit']:active {
+        box-shadow: 0 0 5px rgba(238, 168, 19, 1);
+        border: 1px solid rgba(238, 168, 19, 1);
+      }
+
+      .form-active {
+        border: 1px solid rgba(238, 168, 19, 1);
+        background-color: #eea813;
+        color: #fff;
+      }
+
+      .invalid {
+        box-shadow: 0 0 5px rgba(200, 0, 0, 0.85);
+        border: 1px solid rgba(200, 0, 0, 0.85);
+      }
+
       @media screen and (max-width: 514px) {
         #donate-react {
           width: 320px;
@@ -181,7 +248,8 @@
           <label for="designation" class="fs-18 d-block mb-10"
             >Designation
           </label>
-          <select name="designation" id="designation">
+          <select class="invalid" name="designation" id="designation" required>
+            <option value="">-</option>
             <option
               value="Missionary Support - Individual or Family (pls provide note)"
               >Missionary Support - Individual or Family (pls provide
@@ -209,12 +277,15 @@
           <i class="fa fa-caret-down" aria-hidden="true"></i>
         </div>
         <div class="form-wrapper my-10">
-          <label for="frequency" class="fs-18 d-block mb-10">Notes</label>
+          <label for="frequency" class="fs-18 d-block mb-10"
+            >Notes (Optional)</label
+          >
           <textarea name="" id="" cols="30" rows="10"></textarea>
         </div>
         <div class="form-wrapper my-10">
           <label for="frequency" class="fs-18 d-block mb-10">Frequency</label>
-          <select name="frequency" id="frequency">
+          <select class="invalid" name="frequency" id="frequency" required>
+            <option value="">-</option>
             <option value="Monthly">Monthly</option>
             <option value="One-Time">One-Time</option>
           </select>
@@ -226,23 +297,59 @@
           >
           <i class="fa fa-usd" aria-hidden="true"></i
           ><input
-            class="mb-30"
+            class="invalid"
             type="text"
             name="specific-amount"
+            pattern="^[0-9]*$"
             placeholder="0.00"
+            required
           />
         </div>
         <div class="form-wrapper my-10">
-          <button class="full-width mb-10 semibold">
-            Donate with Card
-            <span
-              ><img
-                class="cards vertical-align-middle"
+          <label for="payment-method" class="fs-18 d-block mb-10"
+            >Payment Method</label
+          >
+          <div
+            class="d-flex align-items-center payment-method mb-10 toggleCard invalid"
+          >
+            <input
+              class="mb-10"
+              type="radio"
+              name="payment-method"
+              id="card"
+              value="card"
+              required
+            />
+            <label>Card</label>
+            <span>
+              <img
+                style="width: 45%;"
                 src="assets/img/cards.png"
-                alt=""
+                alt="Accepted Cards Logo"
             /></span>
-          </button>
-          <button class="paypal full-width mb-10 semibold"></button>
+          </div>
+          <div
+            class="d-flex align-items-center payment-method mb-40 togglePaypal invalid"
+          >
+            <input
+              class="mb-30"
+              type="radio"
+              name="payment-method"
+              id="paypal"
+              value="paypal"
+              required
+            />
+            <label>PayPal</label>
+            <span>
+              <img
+                style="width: 24%;"
+                src="assets/img/paypal-logo-final.png"
+                alt="PayPal Logo"
+            /></span>
+          </div>
+        </div>
+        <div class="form-wrapper my-10">
+          <input class="d-block" type="submit" value="DONATE" />
         </div>
       </form>
     </section>
@@ -322,6 +429,31 @@
         </div>
       </div>
     </footer>
+    <script>
+      const radioPayment = document.querySelectorAll('.payment-method'),
+        card = document.querySelector('#card'),
+        paypal = document.querySelector('#paypal'),
+        radioPaymentCard = document.querySelector('.toggleCard'),
+        radioPaymentPaypal = document.querySelector('.togglePaypal'),
+        formDonate = document.querySelector('#donate-react form');
+
+      for (const radio of radioPayment) {
+        radio.addEventListener('click', (e) => {
+          if (radio.classList.contains('toggleCard')) {
+            card.checked = true;
+            radioPaymentCard.classList.add('form-active');
+          } else {
+            radioPaymentCard.classList.remove('form-active');
+          }
+          if (radio.classList.contains('togglePaypal')) {
+            paypal.checked = true;
+            radioPaymentPaypal.classList.add('form-active');
+          } else {
+            radioPaymentPaypal.classList.remove('form-active');
+          }
+        });
+      }
+    </script>
     <script src="js/scripts.js"></script>
   </body>
 </html>

@@ -226,6 +226,10 @@ img {
   margin: 0 auto;
 }
 
+textarea {
+  font-family: 'Lato-Regular';
+}
+
 .break-word {
   overflow-wrap: break-word;
 }
