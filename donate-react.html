@@ -97,34 +97,51 @@
       }
 
       #donate-react input[type='radio'] {
-        min-height: 41px;
         cursor: pointer;
         margin: unset;
-        margin-right: 10px;
-        pointer-events: none;
+      }
+
+      #card {
+        position: absolute;
+        top: 16px;
+        left: 13px;
+      }
+
+      #paypal {
+        position: absolute;
+        top: 16px;
+        left: 13px;
+      }
+
+      #donate-react .payment-method #paypal span {
+        margin-right: 105px;
       }
 
       #donate-react .payment-method {
         border: 1px solid #e0e0e0;
-        padding: 0 25px;
+        padding: 8px 25px;
         cursor: pointer;
         transition: 0.2s all ease-in-out;
+        display: block;
       }
 
       #donate-react .payment-method:focus,
       #donate-react .payment-method:active,
       #donate-react .payment-method:hover {
-        box-shadow: 0 0 5px rgba(238, 168, 19, 1);
-        border: 1px solid rgba(238, 168, 19, 1);
+        box-shadow: 0 0 5px rgba(238, 168, 19, 1) !important;
+        border: 1px solid rgba(238, 168, 19, 1) !important;
       }
 
       #donate-react .payment-method span {
-        pointer-events: none;
+        vertical-align: middle;
+        margin-left: 10px;
+        margin-right: 95px;
       }
 
       #donate-react .payment-method label {
         cursor: pointer;
-        pointer-events: none;
+        padding-left: 10px;
+        vertical-align: middle;
       }
 
       #donate-react textarea:hover {
@@ -159,7 +176,6 @@
 
       .invalid {
         box-shadow: 0 0 5px rgba(200, 0, 0, 0.85);
-        /* border: 1px solid rgba(200, 0, 0, 0.85); */
       }
 
       .error {
@@ -256,7 +272,6 @@
           <label for="designation" class="fs-18 d-inline-block mb-10"
             >Designation
           </label>
-
           <select class="invalid" name="designation" id="designation" required>
             <option value="">-</option>
             <option
@@ -302,7 +317,6 @@
           <label for="frequency" class="fs-18 d-inline-block mb-10"
             >Frequency</label
           >
-
           <select class="invalid" name="frequency" id="frequency" required>
             <option value="">-</option>
             <option value="Monthly">Monthly</option>
@@ -330,43 +344,34 @@
           <label for="payment-method" class="fs-18 d-inline-block mb-10"
             >Payment Method</label
           >
-
-          <div
-            class="d-flex align-items-center payment-method mb-10 toggleCard invalid"
-          >
-            <input
-              type="radio"
-              name="payment-method"
-              id="card"
-              value="card"
-              required
-            />
-            <label>Card</label>
-            <span>
+          <div class="mb-10" style="position: relative;">
+            <input type="radio" name="payment-method" id="card" value="card" />
+            <label class="payment-method" for="card"
+              ><span>Card</span>
               <img
-                style="width: 45%;"
+                class="vertical-align-middle margin-auto"
+                style="width: 34%; display: unset;"
                 src="assets/img/cards.png"
                 alt="Accepted Cards Logo"
-            /></span>
+            /></label>
           </div>
-          <div
-            class="d-flex align-items-center payment-method togglePaypal invalid"
-          >
+          <div style="position: relative;">
             <input
               type="radio"
               name="payment-method"
               id="paypal"
               value="paypal"
-              required
             />
-            <label>PayPal</label>
-            <span>
+            <label class="payment-method" for="paypal"
+              ><span style="margin-right: 114px;">PayPal</span>
               <img
-                style="width: 24%;"
+                class="vertical-align-middle"
+                style="width: 20%; display: unset;"
                 src="assets/img/paypal-logo-final.png"
                 alt="PayPal Logo"
-            /></span>
+            /></label>
           </div>
+
           <span class="error error-show">Required Field</span>
         </div>
         <div class="form-wrapper my-10">
@@ -450,31 +455,6 @@
         </div>
       </div>
     </footer>
-    <script>
-      const radioPayment = document.querySelectorAll('.payment-method'),
-        card = document.querySelector('#card'),
-        paypal = document.querySelector('#paypal'),
-        radioPaymentCard = document.querySelector('.toggleCard'),
-        radioPaymentPaypal = document.querySelector('.togglePaypal'),
-        formDonate = document.querySelector('#donate-react form');
-
-      for (const radio of radioPayment) {
-        radio.addEventListener('click', (e) => {
-          if (radio.classList.contains('toggleCard')) {
-            card.checked = true;
-            radioPaymentCard.classList.add('form-active');
-          } else {
-            radioPaymentCard.classList.remove('form-active');
-          }
-          if (radio.classList.contains('togglePaypal')) {
-            paypal.checked = true;
-            radioPaymentPaypal.classList.add('form-active');
-          } else {
-            radioPaymentPaypal.classList.remove('form-active');
-          }
-        });
-      }
-    </script>
     <script src="js/scripts.js"></script>
   </body>
 </html>
