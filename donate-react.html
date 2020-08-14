@@ -100,8 +100,8 @@
         min-height: 41px;
         cursor: pointer;
         margin: unset;
-        margin-right: 10px;
-        pointer-events: none;
+        /* margin-right: 10px; */
+        /* pointer-events: none; */
       }
 
       #donate-react .payment-method {
@@ -114,8 +114,8 @@
       #donate-react .payment-method:focus,
       #donate-react .payment-method:active,
       #donate-react .payment-method:hover {
-        box-shadow: 0 0 5px rgba(238, 168, 19, 1);
-        border: 1px solid rgba(238, 168, 19, 1);
+        box-shadow: 0 0 5px rgba(238, 168, 19, 1) !important;
+        border: 1px solid rgba(238, 168, 19, 1) !important;
       }
 
       #donate-react .payment-method span {
@@ -124,7 +124,8 @@
 
       #donate-react .payment-method label {
         cursor: pointer;
-        pointer-events: none;
+        padding-left: 10px;
+        /* pointer-events: none; */
       }
 
       #donate-react textarea:hover {
@@ -326,7 +327,7 @@
           />
           <span class="error error-show">Required Field</span>
         </div>
-        <div class="form-wrapper my-10">
+        <!-- <div class="form-wrapper my-10">
           <label for="payment-method" class="fs-18 d-inline-block mb-10"
             >Payment Method</label
           >
@@ -366,6 +367,41 @@
                 src="assets/img/paypal-logo-final.png"
                 alt="PayPal Logo"
             /></span>
+          </div>
+          <span class="error error-show">Required Field</span>
+        </div> -->
+        <div class="form-wrapper my-10">
+          <label for="payment-method" class="fs-18 d-inline-block mb-10"
+            >Payment Method</label
+          >
+          <div
+            class="payment-method px-25 d-flex flex-direction-row align-items-center mb-10 invalid"
+            for="card"
+          >
+            <input name="payment-method" id="card" type="radio" />
+            <label class="d-flex align-items-center" for="card"
+              >Card
+              <img
+                class="vertical-align-middle margin-auto"
+                style="width: 45%; display: unset;"
+                src="assets/img/cards.png"
+                alt="Accepted Cards Logo"
+            /></label>
+          </div>
+          <div
+            class="payment-method px-25 d-flex flex-direction-row align-items-center invalid"
+            for="paypal"
+          >
+            <input name="payment-method" id="paypal" type="radio" />
+            <label class="d-flex align-items-center" for="paypal"
+              >PayPal
+
+              <img
+                class="vertical-align-middle margin-auto"
+                style="width: 24%; display: unset;"
+                src="assets/img/paypal-logo-final.png"
+                alt="PayPal Logo"
+            /></label>
           </div>
           <span class="error error-show">Required Field</span>
         </div>
@@ -450,7 +486,7 @@
         </div>
       </div>
     </footer>
-    <script>
+    <!-- <script>
       const radioPayment = document.querySelectorAll('.payment-method'),
         card = document.querySelector('#card'),
         paypal = document.querySelector('#paypal'),
@@ -474,7 +510,7 @@
           }
         });
       }
-    </script>
+    </script> -->
     <script src="js/scripts.js"></script>
   </body>
 </html>
