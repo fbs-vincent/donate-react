@@ -7,9 +7,16 @@
     <link rel="stylesheet" href="css/styles.css" />
     <link
       rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+      crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="css/fontawesome.css" />
+    <!-- <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    /> -->
+    <!-- <link rel="stylesheet" href="css/fontawesome.css" /> -->
+
     <style>
       #donate-react {
         width: 500px;
@@ -56,6 +63,19 @@
         border: 1px solid rgba(238, 168, 19, 1);
         background-color: #eea813;
         color: #fff;
+      }
+
+      /* #donate-react button[type='submit'] {
+        background-color: #eea813;
+        color: #fff;
+      } */
+
+      #donate-react button:disabled {
+        box-shadow: none;
+        border: 1px solid #e0e0e0;
+        background-color: rgba(238, 168, 19, 0.6) !important;
+        color: #fff;
+        cursor: not-allowed !important;
       }
 
       #donate-react i {
@@ -167,6 +187,27 @@
       #donate-react input[type='submit']:active {
         box-shadow: 0 0 5px rgba(238, 168, 19, 1);
         border: 1px solid rgba(238, 168, 19, 1);
+      }
+
+      .spinner button {
+        border: 1px solid rgba(238, 168, 19, 1);
+        background-color: #eea813 !important;
+        color: #fff;
+        cursor: pointer !important;
+      }
+
+      .spinner button:hover {
+        box-shadow: 0 0 5px rgba(238, 168, 19, 1);
+        border: 1px solid rgba(238, 168, 19, 1);
+      }
+
+      .spinner i {
+        font-size: 15px !important;
+        color: #fff !important;
+        position: unset !important;
+        top: unset !important;
+        right: unset !important;
+        float: right;
       }
 
       .form-active {
@@ -387,8 +428,12 @@
           </div>
           <span class="error error-show">Required Field</span>
         </div>
-        <div class="form-wrapper my-10">
-          <input class="d-block mt-30" type="submit" value="DONATE" />
+        <div class="form-wrapper my-10 spinner">
+          <button class="full-width mt-30" type="submit" disabled="true">
+            DONATE
+
+            <i class="fas fa-spinner fa-spin fa-1x"></i>
+          </button>
         </div>
       </form>
     </section>
