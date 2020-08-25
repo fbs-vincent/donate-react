@@ -6,481 +6,150 @@
     <title>Mobile Newsletter</title>
   </head>
   <body>
-    <style>
-      * {
-        padding: 0;
-        margin: 0;
-        font-family: sans-serif;
-        font-size: 13px;
-        text-align: justify;
-      }
-
-      * {
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-      }
-      *:before,
-      *:after {
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-      }
-
-      .container {
-        margin-right: auto;
-        margin-left: auto;
-        padding-left: 15px;
-        padding-right: 15px;
-      }
-      @media (min-width: 768px) {
-        .container {
-          width: 600px;
-        }
-      }
-      @media (min-width: 992px) {
-        .container {
-          width: 600px;
-        }
-      }
-      @media (min-width: 1200px) {
-        .container {
-          width: 600px;
-        }
-      }
-      .container-fluid {
-        margin-right: auto;
-        margin-left: auto;
-        padding-left: 15px;
-        padding-right: 15px;
-      }
-      .row {
-        margin-left: -15px;
-        margin-right: -15px;
-      }
-      .col-xs-1,
-      .col-sm-1,
-      .col-md-1,
-      .col-lg-1,
-      .col-xs-2,
-      .col-sm-2,
-      .col-md-2,
-      .col-lg-2,
-      .col-xs-3,
-      .col-sm-3,
-      .col-md-3,
-      .col-lg-3,
-      .col-xs-4,
-      .col-sm-4,
-      .col-md-4,
-      .col-lg-4,
-      .col-xs-5,
-      .col-sm-5,
-      .col-md-5,
-      .col-lg-5,
-      .col-xs-6,
-      .col-sm-6,
-      .col-md-6,
-      .col-lg-6,
-      .col-xs-7,
-      .col-sm-7,
-      .col-md-7,
-      .col-lg-7,
-      .col-xs-8,
-      .col-sm-8,
-      .col-md-8,
-      .col-lg-8,
-      .col-xs-9,
-      .col-sm-9,
-      .col-md-9,
-      .col-lg-9,
-      .col-xs-10,
-      .col-sm-10,
-      .col-md-10,
-      .col-lg-10,
-      .col-xs-11,
-      .col-sm-11,
-      .col-md-11,
-      .col-lg-11,
-      .col-xs-12,
-      .col-sm-12,
-      .col-md-12,
-      .col-lg-12 {
-        position: relative;
-        min-height: 1px;
-        padding-left: 15px;
-        padding-right: 15px;
-      }
-      .col-xs-1,
-      .col-xs-2,
-      .col-xs-3,
-      .col-xs-4,
-      .col-xs-5,
-      .col-xs-6,
-      .col-xs-7,
-      .col-xs-8,
-      .col-xs-9,
-      .col-xs-10,
-      .col-xs-11,
-      .col-xs-12 {
-        float: left;
-      }
-      .col-xs-12 {
-        width: 100%;
-      }
-      .col-xs-11 {
-        width: 91.66666667%;
-      }
-      .col-xs-10 {
-        width: 83.33333333%;
-      }
-      .col-xs-9 {
-        width: 75%;
-      }
-      .col-xs-8 {
-        width: 66.66666667%;
-      }
-      .col-xs-7 {
-        width: 58.33333333%;
-      }
-      .col-xs-6 {
-        width: 50%;
-      }
-      .col-xs-5 {
-        width: 41.66666667%;
-      }
-      .col-xs-4 {
-        width: 33.33333333%;
-      }
-      .col-xs-3 {
-        width: 25%;
-      }
-      .col-xs-2 {
-        width: 16.66666667%;
-      }
-      .col-xs-1 {
-        width: 8.33333333%;
-      }
-      @media (min-width: 768px) {
-        .col-sm-1,
-        .col-sm-2,
-        .col-sm-3,
-        .col-sm-4,
-        .col-sm-5,
-        .col-sm-6,
-        .col-sm-7,
-        .col-sm-8,
-        .col-sm-9,
-        .col-sm-10,
-        .col-sm-11,
-        .col-sm-12 {
-          float: left;
-        }
-        .col-sm-12 {
-          width: 100%;
-        }
-        .col-sm-11 {
-          width: 91.66666667%;
-        }
-        .col-sm-10 {
-          width: 83.33333333%;
-        }
-        .col-sm-9 {
-          width: 75%;
-        }
-        .col-sm-8 {
-          width: 66.66666667%;
-        }
-        .col-sm-7 {
-          width: 58.33333333%;
-        }
-        .col-sm-6 {
-          width: 50%;
-        }
-        .col-sm-5 {
-          width: 41.66666667%;
-        }
-        .col-sm-4 {
-          width: 33.33333333%;
-        }
-        .col-sm-3 {
-          width: 25%;
-        }
-        .col-sm-2 {
-          width: 16.66666667%;
-        }
-        .col-sm-1 {
-          width: 8.33333333%;
-        }
-      }
-      @media (min-width: 992px) {
-        .col-md-1,
-        .col-md-2,
-        .col-md-3,
-        .col-md-4,
-        .col-md-5,
-        .col-md-6,
-        .col-md-7,
-        .col-md-8,
-        .col-md-9,
-        .col-md-10,
-        .col-md-11,
-        .col-md-12 {
-          float: left;
-        }
-        .col-md-12 {
-          width: 100%;
-        }
-        .col-md-11 {
-          width: 91.66666667%;
-        }
-        .col-md-10 {
-          width: 83.33333333%;
-        }
-        .col-md-9 {
-          width: 75%;
-        }
-        .col-md-8 {
-          width: 66.66666667%;
-        }
-        .col-md-7 {
-          width: 58.33333333%;
-        }
-        .col-md-6 {
-          width: 50%;
-        }
-        .col-md-5 {
-          width: 41.66666667%;
-        }
-        .col-md-4 {
-          width: 33.33333333%;
-        }
-        .col-md-3 {
-          width: 25%;
-        }
-        .col-md-2 {
-          width: 16.66666667%;
-        }
-        .col-md-1 {
-          width: 8.33333333%;
-        }
-      }
-      @media (min-width: 1200px) {
-        .col-lg-1,
-        .col-lg-2,
-        .col-lg-3,
-        .col-lg-4,
-        .col-lg-5,
-        .col-lg-6,
-        .col-lg-7,
-        .col-lg-8,
-        .col-lg-9,
-        .col-lg-10,
-        .col-lg-11,
-        .col-lg-12 {
-          float: left;
-        }
-        .col-lg-12 {
-          width: 100%;
-        }
-        .col-lg-11 {
-          width: 91.66666667%;
-        }
-        .col-lg-10 {
-          width: 83.33333333%;
-        }
-        .col-lg-9 {
-          width: 75%;
-        }
-        .col-lg-8 {
-          width: 66.66666667%;
-        }
-        .col-lg-7 {
-          width: 58.33333333%;
-        }
-        .col-lg-6 {
-          width: 50%;
-        }
-        .col-lg-5 {
-          width: 41.66666667%;
-        }
-        .col-lg-4 {
-          width: 33.33333333%;
-        }
-        .col-lg-3 {
-          width: 25%;
-        }
-        .col-lg-2 {
-          width: 16.66666667%;
-        }
-        .col-lg-1 {
-          width: 8.33333333%;
-        }
-      }
-      .clearfix:before,
-      .clearfix:after,
-      .container:before,
-      .container:after,
-      .container-fluid:before,
-      .container-fluid:after,
-      .row:before,
-      .row:after {
-        content: ' ';
-        display: table;
-      }
-      .clearfix:after,
-      .container:after,
-      .container-fluid:after,
-      .row:after {
-        clear: both;
-      }
-
-      .pd-20 {
-        padding: 20px;
-      }
-
-      .mb-20 {
-        margin-bottom: 20px;
-      }
-
-      .my-20 {
-        margin: 20px 0;
-      }
-
-      img {
-        width: 100%;
-        height: auto;
-      }
-
-      .border-left-blue {
-        border-left: 3px solid #319ad5;
-      }
-
-      @media screen and (max-width: 767px) {
-        .main-content {
-          border-left: 3px solid #319ad5;
-        }
-
-        .border-left-blue {
-          border: none;
-        }
-      }
-    </style>
-    <div class="container">
-      <div class="row">
-        <img
-          style="display: block;"
-          src="https://frontlinebusiness.com.ph/wp-content/uploads/2020/07/compassionheader.png"
-          alt=""
-        />
-      </div>
-      <div class="row my-20 main-content">
-        <div class="col-lg-6 col-sm-6 mb-20 border-left-blue">
-          <p class="mb-20">Hello, Partners and Friends,</p>
-          <p>
-            <strong><em>Rom 8:35</em></strong>
+    <div style="max-width: 600px; margin: 0 auto;">
+      <div
+        style="
+          border: 1px solid #e0e0e0;
+          -webkit-box-shadow: 0px 0px 8px 0px rgba(224, 224, 224, 1);
+          -moz-box-shadow: 0px 0px 8px 0px rgba(224, 224, 224, 1);
+          box-shadow: 0px 0px 8px 0px rgba(224, 224, 224, 1);
+          border-radius: 10px;
+          margin: 20px 0;
+        "
+      >
+        <div
+          style="
+            padding: 30px 0;
+            background-color: #eea813;
+            border-top-right-radius: 10px;
+            border-top-left-radius: 10px;
+          "
+        ></div>
+        <div style="padding: 20px;">
+          <div style="margin-bottom: 20px; text-align: center;">
+            <a href="https://www.thefrontline.asia" target="_blank">
+              <img
+                style="width: 40%;"
+                src="/donate-react/assets/img/philippine-frontline-ministries-logo.png"
+                alt=""
+            /></a>
+          </div>
+          <h1
+            style="
+              margin-bottom: 20px;
+              font-family: sans-serif;
+              font-size: 32px;
+              text-align: center;
+            "
+          >
+            <span style="color: #eea813;">Donation</span>
+            Summary
+          </h1>
+          <p
+            style="
+              text-align: center;
+              margin-bottom: 20px;
+              font-size: 16px;
+              font-weight: bold;
+              font-family: sans-serif;
+            "
+          >
+            Thank You for Donating!
           </p>
-          <p class="mb-20">
-            <strong
-              ><em
-                ><q
-                  >Can anything ever separate us from Christ's love? Does it
-                  mean He no longer loves us if we have trouble or calamity, or
-                  are persecuted, or hungry, or destitute, or in danger, or
-                  threatened with death?</q
-                ></em
-              ></strong
-            >
+          <div>
+            <div style="margin-bottom: 5px;">
+              <p
+                style="
+                  text-align: center;
+                  font-size: 16px;
+                  font-family: sans-serif;
+                  margin: 0;
+                "
+              >
+                <span style="font-weight: bold; font-size: 16px;"
+                  >Designation:</span
+                >
+                Missionary Support
+              </p>
+            </div>
+            <div style="margin-bottom: 5px;">
+              <p
+                style="
+                  text-align: center;
+                  font-size: 16px;
+                  font-family: sans-serif;
+                  margin: 0;
+                "
+              >
+                <span style="font-weight: bold; font-size: 16px;"
+                  >Frequency:</span
+                >
+                Monthly
+              </p>
+            </div>
+            <div style="margin-bottom: 5px;">
+              <p
+                style="
+                  text-align: center;
+                  font-size: 16px;
+                  font-family: sans-serif;
+                  margin: 0;
+                "
+              >
+                <span style="font-weight: bold; font-size: 16px;">Amount:</span>
+                $100
+              </p>
+            </div>
+            <div style="margin-bottom: 5px;">
+              <p
+                style="
+                  text-align: center;
+                  font-size: 16px;
+                  font-family: sans-serif;
+                  margin: 0;
+                "
+              >
+                <span style="font-weight: bold; font-size: 16px;">Name:</span>
+                Vincent Ramirez
+              </p>
+            </div>
+            <div style="margin-bottom: 40px;">
+              <p
+                style="
+                  text-align: center;
+                  font-size: 16px;
+                  font-family: sans-serif;
+                  margin: 0;
+                "
+              >
+                <span style="font-weight: bold; font-size: 16px;"
+                  >Payment Method:</span
+                >
+                PayPal
+              </p>
+            </div>
+          </div>
+          <p
+            style="
+              text-align: center;
+              font-family: sans-serif;
+              margin: 0;
+              font-size: 14px;
+            "
+          >
+            Copyright © 2020 Philippine Frontline Ministries.
           </p>
-          <p class="mb-20">
-            For many of us, these are the most extraordinary and difficult days
-            that we have ever faced. Every aspect of life has been touched in
-            some way, and the answers aren’t always clear. But this we know,
-            before there was a problem there was an answer. God is not surprised
-            by anything, and our trust in Him, rather than being shaken, has
-            increased.
+          <p
+            style="
+              text-align: center;
+              font-family: sans-serif;
+              margin: 0;
+              margin-bottom: 20px;
+              font-size: 14px;
+            "
+          >
+            All rights reserved.
           </p>
-          <p class="mb-20">
-            Within the ministries of Compassion under Philippine Frontline
-            Ministries, all our operations have been impacted, our hospital
-            ministry, which focuses on assisting those who lack the resources
-            for their medical needs, has been difficult to carry on; to say the
-            least. Access to hospitals is severely restricted, but the needs of
-            the sick have increased exponentially. We at Frontline have recently
-            had to face the death of dear friends. Personally, I regard death as
-            a consequence of sin an enemy to be resisted. “…And the last enemy
-            to be destroyed is death.” (1Cor. 1 5:25-26). “Death Be Not Proud”,
-            a poem by John Donne, often comes to my mind:<img
-              style="float: right; width: 50%;"
-              class="pd-20"
-              src="https://frontlinebusiness.com.ph/wp-content/uploads/2020/07/mpu-july2020-img1.png"
-              alt=""
-            />
-            “Death be not proud, through same have called thee Mighty and
-            dreadful, for thou art not so; For those whom thou think’st thou
-            dust overthrow Die not, poor Death, nor yet carest thou kill me.
-            …One short sleep past, we wake eternally And death shall be no more;
-            Death, thou shall die.”
-          </p>
-          <p>
-            Our community development programs, with a primary focus of feeding
-            the hungry, have been forced to cease… but the need for food has not
-            stopped. We have found ways, with your support, to continue to
-            supply food to the hungry within our neighboring community and
-            beyond, by the grace of God.
-          </p>
-        </div>
-        <div class="col-lg-6 col-sm-6">
-          <p class="mb-20">
-            Face the Children (FTC), our child residential care facility, has
-            also been impacted. Due to the negative economic effect of this
-            pandemic, some of our partners have reluctantly had to discontinue
-            financial support. Coupled with this is the impact of isolation and
-            confinement of our
-            <img
-              style="float: right; width: 51%;"
-              class="pd-20"
-              src="https://frontlinebusiness.com.ph/wp-content/uploads/2020/07/mpu-july2020-img2.png"
-              alt=""
-            />
-            children over half of whom are at or near teenage years. That’s a
-            lot of pent up energy! Our resourceful staff have found ways to keep
-            the children busy. In fact, a gardening project has been established
-            and the children have begun to successfully grow fruits and
-            vegetables.
-          </p>
-          <p class="mb-20">
-            This may seem like a difficult update to share, but these are
-            difficult days. We face the difficulties squarely and do not lose
-            hope. The Scripture quoted at the beginning of my letter continues;
-          </p>
-          <p class="mb-20">
-            Rom. 8:37-39 “No, despite all these things, overwhelming victory is
-            ours through Christ, who loved us. And I am convinced that nothing
-            can ever separate us from God’s love. Neither death nor life,
-            neither angesl nor demons, neither our fears for today nor your
-            worries about tomorrow not even the powers of hell can separate us
-            from God’s love. 39, NO power in the sky above or in the earth below
-            indeed, nothing in all creation will ever be able to separate us
-            from the love of God that is revealed in Christ Jesus our Lord.”
-          </p>
-          <p class="mb-20">
-            He is our Confidence. He is our Hope. God bless you. I send my
-            personal thanks to you for your continuing support and pray that the
-            rich supply of God’s provision will be yours during these days.
-          </p>
-          <p class="mb-20">
-            Working while it’s day,
-          </p>
-          <p>
-            <img
-              style="display: block; width: 37%;"
-              src="https://frontlinebusiness.com.ph/wp-content/uploads/2020/07/mikeG-signature-2.png"
-              alt=""
-            />Michael Gordon
-          </p>
-          <p><em>Director of Compassion Ministries</em></p>
-          <p>Philippine Frontline Ministries, Inc.</p>
         </div>
       </div>
     </div>
