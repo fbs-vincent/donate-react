@@ -169,6 +169,9 @@
         vertical-align: middle;
       }
 
+      #donate-react textarea {
+      }
+
       #donate-react textarea:hover {
         box-shadow: 0 0 5px rgba(238, 168, 19, 1);
         border: 1px solid rgba(238, 168, 19, 1);
@@ -336,41 +339,49 @@
           </label>
           <select class="invalid" name="designation" id="designation" required>
             <option value="">-</option>
-            <option
-              value="Missionary Support - Individual or Family (pls provide note)"
-              >Missionary Support - Individual or Family (pls provide
-              note)</option
-            >
-            <option value="Frontline Worship Center - New Training Center"
-              >Frontline Worship Center - New Training Center</option
-            >
-            <option value="Frontline General Fund (Where Most Needed)"
-              >Frontline General Fund (Where Most Needed)</option
-            >
-            <option
-              value="Frontline Christian Academy (Please specify donation purpose)"
-              >Frontline Christian Academy (Please specify donation
-              purpose)</option
-            >
-            <option
-              value="Face Christian Academy (Please specify donation purpose)"
-              >Face Christian Academy (Please specify donation purpose)</option
-            >
-            <option value="Adopt a Church (pls provide note)"
-              >Adopt a Church (pls provide note)</option
-            >
+            <option value="Frontline Ministries - General Fund">
+              Frontline Ministries - General Fund
+            </option>
+            <option value="Frontline Project (please specify)">
+              Frontline Project (please specify)
+            </option>
+            <option value="Church Reproducing Fund">
+              Church Reproducing Fund
+            </option>
+            <option value="Church Adopt a Church">
+              Church "Adopt a Church"
+            </option>
+            <option value="Face the Children - General Fund">
+              Face the Children - General Fund
+            </option>
+            <option value="Face the Children - Child Sponsorship">
+              Face the Children - Child Sponsorship
+            </option>
+            <option value="School (FCA) - General Fund">
+              School (FCA) - General Fund
+            </option>
+            <option value="School (FCA) - Steward Project">
+              School (FCA) - Steward Project
+            </option>
+            <option value="Social Enterprise Ministries ">
+              Social Enterprise Ministries
+            </option>
+            <option value="Other Donation (please specify)">
+              Other Donation (please specify)
+            </option>
           </select>
           <span class="error error-show">Required Field</span>
           <i class="fa fa-caret-down" aria-hidden="true"></i>
         </div>
         <div class="form-wrapper my-10">
-          <label for="frequency" class="fs-18 d-block mb-10">Notes</label>
+          <label for="frequency" class="fs-18 d-block mb-10">Note:</label>
           <textarea
             class="invalid"
             name=""
             id=""
             cols="30"
-            rows="10"
+            rows="5"
+            placeholder="Please provide any further details or instructions that may be helpful."
             required
           ></textarea>
           <span class="error error-show">Required Field</span>
@@ -448,7 +459,7 @@
           <h3
             class="regular ls-1 mb-20 text-transform-uppercase fs-26 text-white"
           >
-            <span class="text-yellow">Subscribe</span> To Our Newsletter
+            <span class="text-yellow">Subscribe</span> To Frontline News!
           </h3>
           <form action="">
             <div class="regular w-300 d-inline-block t-left">
