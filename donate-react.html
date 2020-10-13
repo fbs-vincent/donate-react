@@ -228,8 +228,11 @@
       }
 
       .error {
-        color: rgba(200, 0, 0, 0.85);
+        color: #fff;
         visibility: hidden;
+        background-color: red;
+        text-align: center;
+        display: block;
       }
 
       .error-show {
@@ -259,6 +262,26 @@
 
         #donate-react .cards {
           width: 50%;
+        }
+      }
+
+      /* October 13, 2020 */
+
+      .newsletter_submit {
+        display: inline-block;
+        vertical-align: top;
+        color: #fff;
+        border: none;
+        padding: 10px 15px;
+        margin-left: 10px;
+      }
+
+      @media screen and (max-width: 482px) {
+        .newsletter_submit {
+          display: block !important;
+          margin-left: unset !important;
+          width: 100% !important;
+          margin-top: 20px !important;
         }
       }
     </style>
@@ -463,14 +486,10 @@
           </h3>
           <form action="">
             <div class="regular w-300 d-inline-block t-left">
-              <label for="email" class="text-white">Email Address</label>
               <input type="text" name="email" placeholder="Email Address" />
+              <span class="error error-show">Required Field</span>
             </div>
-            <input
-              class="heavy fs-14 bg-yellow"
-              type="submit"
-              value="SUBSCRIBE"
-            />
+            <button class="newsletter_submit bg-yellow heavy">Subscribe</button>
           </form>
         </div>
       </div>
